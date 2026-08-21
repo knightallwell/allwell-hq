@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fbfbfd;
+  --bg-elevated: #ffffff;
+  --bg-inset: #f2f3f6;
+  --fg: #0a0b0f;
+  --fg-muted: #52565f;
+  --fg-subtle: #83868f;
+  --border: #e4e5ea;
+  --border-strong: #cdced6;
+  --accent: #4f46e5;
+  --accent-fg: #ffffff;
+  --accent-soft: #eeecfd;
+  --cyan: #0891b2;
+  --gold: #a3760f;
+  --success: #15803d;
+  --ring: #4f46e5;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(10, 11, 15, 0.08);
+  --grid-line: rgba(10, 11, 15, 0.05);
+}
+
+:root[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  @media (prefers-color-scheme: dark) {
+    --bg: #06070b;
+    --bg-elevated: #0c0e15;
+    --bg-inset: #10121a;
+    --fg: #f4f5f8;
+    --fg-muted: #a3a7b3;
+    --fg-subtle: #6b6f7c;
+    --border: #1d2029;
+    --border-strong: #2a2e3a;
+    --accent: #8b85f6;
+    --accent-fg: #06070b;
+    --accent-soft: #17163a;
+    --cyan: #22d3ee;
+    --gold: #d9b35f;
+    --success: #4ade80;
+    --ring: #8b85f6;
+    --glass-bg: rgba(12, 14, 21, 0.55);
+    --glass-border: rgba(244, 245, 248, 0.08);
+    --grid-line: rgba(244, 245, 248, 0.05);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #06070b;
+  --bg-elevated: #0c0e15;
+  --bg-inset: #10121a;
+  --fg: #f4f5f8;
+  --fg-muted: #a3a7b3;
+  --fg-subtle: #6b6f7c;
+  --border: #1d2029;
+  --border-strong: #2a2e3a;
+  --accent: #8b85f6;
+  --accent-fg: #06070b;
+  --accent-soft: #17163a;
+  --cyan: #22d3ee;
+  --gold: #d9b35f;
+  --success: #4ade80;
+  --ring: #8b85f6;
+  --glass-bg: rgba(12, 14, 21, 0.55);
+  --glass-border: rgba(244, 245, 248, 0.08);
+  --grid-line: rgba(244, 245, 248, 0.05);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-inset: var(--bg-inset);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-cyan: var(--cyan);
+  --color-gold: var(--gold);
+  --color-success: var(--success);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-geist-sans);
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-subtle);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--accent-fg);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 1rem;
+}
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, var(--fg) 20%, var(--accent) 55%, var(--cyan) 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}

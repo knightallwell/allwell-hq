@@ -1,0 +1,77 @@
+import type { ExperienceEntry } from "@/types";
+
+export const experience: ExperienceEntry[] = [
+  {
+    slug: "august-marathon-analytics",
+    role: "Founder & Principal Data Consultant",
+    org: "August Marathon Analytics",
+    location: "Lagos, Nigeria",
+    start: "Aug 2026",
+    end: "Present",
+    bullets: [
+      "Founded a quantitative analytics consultancy providing financial modelling, risk and fraud analytics, business intelligence and decision-support systems to corporate clients.",
+      "Advise clients on machine-learning-driven forecasting, transaction anomaly detection and the design of end-to-end analytics architecture, from data ingestion through to executive reporting.",
+      "Direct the full engagement lifecycle: scoping and proposal, technical delivery, stakeholder communication, documentation, handover and post-implementation review.",
+      "Establish the firm's methodological standards, including model documentation, validation protocols and client data-governance practice.",
+    ],
+    tech: ["Python", "SQL", "Power BI", "Forecasting", "Anomaly Detection"],
+  },
+  {
+    slug: "os-professional-services",
+    role: "Financial Analyst",
+    org: "OS Professional Services",
+    location: "Ikeja, Lagos, Nigeria",
+    start: "Jan 2024",
+    end: "Aug 2026",
+    bullets: [
+      "Conducted in-depth financial analysis and internal control evaluations for corporate clients across multiple industries, identifying control weaknesses and quantifying associated financial exposure.",
+      "Developed data-driven financial reports and reporting dashboards that improved reporting accuracy and strengthened client risk-management frameworks.",
+      "Collaborated with client-side and internal teams to translate technical analysis into actionable strategic recommendations informing budgeting and investment decisions.",
+      "Standardised recurring analytical procedures into reusable models, reducing turnaround time across client reporting cycles.",
+    ],
+    tech: ["Financial Modelling", "Internal Controls", "Excel", "Power BI"],
+  },
+  {
+    slug: "cicc-dubai",
+    role: "Financial Data Analyst",
+    org: "Council of International Chambers of Commerce (CICC)",
+    location: "Dubai, United Arab Emirates",
+    start: "Nov 2025",
+    end: "Feb 2026",
+    bullets: [
+      "Designed and automated financial analysis workflows in Excel and Python to improve forecasting efficiency and streamline due-diligence processes.",
+      "Analysed complex, multi-source financial datasets to deliver actionable insights that improved client decision-making and operational efficiency.",
+      "Supported financial planning, client onboarding and compliance documentation through structured, data-driven reporting for corporate and individual clients.",
+      "Built financial models and dashboards to track key performance indicators and support strategic planning initiatives across an international chamber network.",
+    ],
+    tech: ["Python", "Excel", "Due Diligence", "Financial Modelling"],
+  },
+  {
+    slug: "soair-africa",
+    role: "Anomaly Detection & Fraud Analytics Intern",
+    org: "SOAIR Africa",
+    location: "Nigeria",
+    start: "Jan 2024",
+    end: "Jul 2024",
+    bullets: [
+      "Developed Python anomaly detection models (Isolation Forest, statistical thresholding) to identify suspicious patterns in financial transaction data, improving incident response efficiency by 25%.",
+      "Applied supervised machine-learning classification to financial system monitoring, reducing mean time to detection for high-priority security events.",
+      "Achieved up to 94% classification accuracy on fraud detection models through iterative feature engineering, resampling and decision-threshold optimisation.",
+    ],
+    tech: ["Python", "Isolation Forest", "Scikit-learn", "Fraud Analytics"],
+  },
+  {
+    slug: "bamo",
+    role: "Finance Officer",
+    org: "Bamo",
+    location: "Lagos, Nigeria",
+    start: "Aug 2020",
+    end: "Nov 2022",
+    bullets: [
+      "Analysed financial and operational data to optimise cost structures, inventory controls and resource allocation.",
+      "Improved operational efficiency by 15% through data-backed process improvements.",
+      "Supported budgeting, financial reporting and performance analysis initiatives, establishing the management reporting cadence.",
+    ],
+    tech: ["Financial Reporting", "Budgeting", "Excel"],
+  },
+];
