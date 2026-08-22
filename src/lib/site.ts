@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Allwell",
-  url: "https://allwellgodwin.com",
+  url: "https://allwell-hq.vercel.app",
   description:
     "Allwell Godwin — Financial Data Scientist & Quantitative Analyst. AI, financial engineering and quantitative research.",
   keywords: [
