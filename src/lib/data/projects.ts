@@ -2,6 +2,37 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    slug: "portfolio-risk-analysis",
+    title: "Multivariate Portfolio Risk Analysis Pipeline",
+    category: "Quantitative Finance",
+    summary:
+      "An end-to-end multi-asset portfolio risk system spanning statistical validation, causal-network structure, regime detection, volatility forecasting and Monte Carlo VaR/CVaR with out-of-sample validation.",
+    problem:
+      "Diversifying across equities, crypto, oil, FX and international names requires understanding how assets are statistically linked and how that dependency structure shifts between calm, crisis and recovery regimes — a single static correlation matrix hides both.",
+    approach:
+      "Built a sequential pipeline: returns construction and cleaning, multicollinearity (VIF) and correlation analysis, stationarity testing (Augmented Dickey-Fuller), a conditional Granger-causality network fitted over a VAR model, Markov-switching regime detection, GARCH volatility forecasting, then Monte Carlo portfolio simulation with weight optimisation, Value at Risk and Expected Shortfall (CVaR). Added time-ordered out-of-sample validation and scenario-based Monte Carlo to test the estimates outside the fitting window.",
+    methods: [
+      "Time-series econometrics (ADF, VAR)",
+      "Granger-causality networks",
+      "Markov-switching regime models",
+      "GARCH volatility modelling",
+      "Monte Carlo simulation",
+      "Portfolio optimisation (VaR / CVaR)",
+    ],
+    tech: ["Python", "statsmodels", "arch", "NumPy / pandas", "NetworkX", "Matplotlib"],
+    metrics: [
+      { label: "Asset universe", value: "~48 series across 6 asset classes + macro" },
+      { label: "Risk measures", value: "VaR, Expected Shortfall (CVaR)" },
+      { label: "Validation", value: "Time-ordered out-of-sample split" },
+    ],
+    lessons:
+      "In-sample VaR and minimum-variance weights flattered the portfolio; the time-ordered out-of-sample check exposed how much the regime and volatility structure drifts, which is where the real risk sits.",
+    future: "Wire the pipeline to a live data feed and turn the scenario engine into a repeatable stress-testing report.",
+    repoUrl:
+      "https://github.com/knightallwell/MidKnighttechport/tree/main/Quantitative%20Finance/Portfolio%20Analysis",
+    featured: true,
+  },
+  {
     slug: "rl-trading-agent",
     title: "Deep Reinforcement Learning Trading Agent",
     category: "Algorithmic Trading",
@@ -21,7 +52,7 @@ export const projects: Project[] = [
       "Reward shaping mattered more than network architecture for stable policy convergence — a naive PnL reward produced brittle, overfit policies.",
     future: "Add transaction-cost modelling and a live paper-trading harness with proper Sharpe/drawdown reporting.",
     repoUrl:
-      "https://github.com/knightallwell/MidKnighttechport/tree/main/Financial%20Technology/Algorithimic%20Trading",
+      "https://github.com/knightallwell/MidKnighttechport/tree/main/Quantitative%20Finance/Algorithimic%20Trading",
     featured: true,
   },
   {
@@ -37,7 +68,7 @@ export const projects: Project[] = [
     methods: ["Recurrent neural networks", "Time-series forecasting", "Technical analysis", "Feature engineering"],
     tech: ["Python", "PyTorch", "pandas", "TA indicators (MA, RSI, MACD)"],
     repoUrl:
-      "https://github.com/knightallwell/MidKnighttechport/tree/main/Financial%20Technology/Stock%20market%20prediction",
+      "https://github.com/knightallwell/MidKnighttechport/tree/main/Quantitative%20Finance/Stock%20market%20prediction",
     featured: true,
   },
   {
